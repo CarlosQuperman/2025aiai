@@ -23,7 +23,7 @@ def load_model_from_drive(file_id):
 # 모델 로드
 st.write("모델을 로드 중입니다. 잠시만 기다려주세요...")
 learner = load_model_from_drive(file_id)
-st.success("모델이 성공적으로 로드되었습니다!")
+st.success("모델이 성공적으로 로드되었습니다! 하하하 호호호호")
 
 # 모델의 분류 라벨 출력
 labels = learner.dls.vocab
@@ -51,12 +51,12 @@ if uploaded_file is not None:
     # 클래스별 확률을 HTML과 CSS로 시각화
     st.markdown("<h3>클래스별 확률:</h3>", unsafe_allow_html=True)
 
-    # if prediction == labels[0]:
-    #     st.write("중냉 꿋굿")
-    # elif prediction == labels[1]:
-    #     st.write("짜장면은 굿")
-    # elif prediction == labels[2]:
-    #     st.write("짬뽕은 맵지만 맛있어!!")
+    if prediction == labels[0]:
+         st.write("중국식 냉면")
+    elif prediction == labels[1]:
+         st.write("짜장면")
+    elif prediction == labels[2]:
+         st.write("강릉은 짬봉 순두부!!")
 
     for label, prob in zip(labels, probs):
         # HTML 및 CSS로 확률을 시각화
